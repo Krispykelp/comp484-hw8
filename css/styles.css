@@ -15,7 +15,7 @@
 *,
 *::before,
 *::after { box-sizing: border-box; }
-html, body { margin: 0; padding: 0; }
+html, body { margin: 0; padding: 0; scroll-behavior: smooth; }
 img { max-width: 100%; display: block; }
 
 /* General Body Styling */
@@ -27,6 +27,54 @@ body {
               var(--bg);
   line-height: 1.65;
 }
+
+/* ===== Fixed Top Nav (no list) ===== */
+.top-nav {
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  backdrop-filter: blur(8px);
+  background: rgba(17, 24, 39, 0.75); /* var(--surface) w/ alpha */
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  padding: 0 24px;
+  z-index: 1000;
+}
+.top-nav .brand {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--text);
+  font-size: 1.1rem;
+  letter-spacing: .06em;
+}
+.top-nav .nav-links {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.top-nav a {
+  color: var(--text-dim);
+  text-decoration: none;
+  padding: .4rem .6rem;
+  border-radius: .6rem;
+  transition: all .2s ease;
+}
+.top-nav a:hover {
+  color: var(--text);
+  background: rgba(255,255,255,.06);
+}
+.top-nav a.download {
+  border: 1px solid rgba(255,255,255,.12);
+}
+
+/* Add top padding so content isn't hidden under fixed nav */
+body { padding-top: 60px; }
+
+/* Anchor offset so headings don’t hide under the fixed nav */
+.section, .site-header { scroll-margin-top: 72px; }
 
 /* Layout Containers */
 .content-wrap {
@@ -163,6 +211,17 @@ header h1, header h2 { margin: 0; }
   margin-bottom: 0.75rem;
 }
 
+/* ===== Background Image + RGBA Gradient on Projects ===== */
+.bg-image {
+  /* layer 1: semi-transparent gradient, layer 2: background image */
+  background-image:
+    linear-gradient(180deg, rgba(15,23,42,0.85), rgba(15,23,42,0.35)),
+    url("images/Kyoto.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* subtle parallax */
+}
+
 /* Skills Grid */
 .skills {
   display: grid;
@@ -201,6 +260,7 @@ header h1, header h2 { margin: 0; }
   font-weight: 500;
   transition: all 0.25s ease;
 }
+.link i { margin-right: .45rem; }
 .link:hover {
   background: linear-gradient(135deg, var(--brand), var(--brand-2));
   color: #06121d;
@@ -213,6 +273,22 @@ header h1, header h2 { margin: 0; }
   padding: 2rem 0 3rem;
   text-align: center;
   color: var(--text-dim);
+}
+.footer-icons {
+  margin-top: .5rem;
+  display: inline-flex;
+  gap: .75rem;
+}
+.footer-icons a {
+  color: var(--text-dim);
+  text-decoration: none;
+  padding: .3rem .45rem;
+  border-radius: .5rem;
+  transition: background .2s ease, color .2s ease;
+}
+.footer-icons a:hover {
+  color: var(--text);
+  background: rgba(255,255,255,.08);
 }
 
 /* Responsive Tweaks */

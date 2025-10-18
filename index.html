@@ -8,14 +8,31 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-  <!-- Styles -->
+  <!-- Font Awesome (for footer/contact icons) -->
+  <script src="https://kit.fontawesome.com/d264c3dc1e.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/styles.css">
+
+
+  <!-- Styles (fixed path) -->
   <link rel="stylesheet" href="css/styles.css" type="text/css" />
   <meta name="description" content="Resume website for Kris — Computer Science student and web developer." />
 </head>
 
 <body>
+  <nav class="top-nav">
+    <a class="brand" href="#top">KS</a>
+    <div class="nav-links">
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+      <!-- PDF download item -->
+      <a class="download" href="resume.pdf" download>Download PDF</a>
+    </div>
+  </nav>
+
   <!-- Header -->
-  <header class="site-header">
+  <header id="top" class="site-header">
     <div class="content-wrap">
       <div class="column-narrow">
         <img src="images/Kyoto.jpg" alt="Portrait of Kris" class="profile-img" />
@@ -29,7 +46,7 @@
         </p>
         <div class="cta-row">
           <a class="btn primary" href="#projects">View Projects</a>
-          <a class="btn ghost" href="#contact">Contact Me</a>
+          <a class="btn ghost" href="mailto:kristoffer.sy123@gmail.com">Contact Me</a>
         </div>
       </div>
     </div>
@@ -38,106 +55,103 @@
   <main id="content">
     <!-- Work Experience -->
     <section id="experience" class="section">
-  <div class="content-wrap">
-    <h3 class="section-title">Work Experience</h3>
+      <div class="content-wrap">
+        <h3 class="section-title">Work Experience</h3>
 
-    <article class="entry job">
-      <div class="column-narrow">
-        <h4 class="entry-title">Freelance Web Developer</h4>
-        <span class="meta">2020 – Present</span>
-      </div>
-      <div class="column-wide">
-        <p>Developed a wide variety of projects for university coursework, clubs, and personal use.</p>
-        <ul>
-          <li>This personal portfolio website was made using HTML, CSS, and JavaScript.</li>
-          <li>Current Project Manager for upcoming product: DigiDachi</li>
-          <li>Experienced in graphical systems and user interface design.</li>
-          <li>Proficient in version control systems, particularly Git.</li>
-          <li>Experienced in both solo work and team development.</li>
-        </ul>
-      </div>
-    </article>
+        <article class="entry job">
+          <div class="column-narrow">
+            <h4 class="entry-title">Freelance Web Developer</h4>
+            <span class="meta">2020 – Present</span>
+          </div>
+          <div class="column-wide">
+            <p>Developed a wide variety of projects for university coursework, clubs, and personal use.</p>
+            <ul>
+              <li>This personal portfolio website was made using HTML, CSS, and JavaScript.</li>
+              <li>Current Project Manager for upcoming product: DigiDachi</li>
+              <li>Experienced in graphical systems and user interface design.</li>
+              <li>Proficient in version control systems, particularly Git.</li>
+              <li>Experienced in both solo work and team development.</li>
+            </ul>
+          </div>
+        </article>
 
-    <article class="entry job">
-      <div class="column-narrow">
-        <h4 class="entry-title">Food Service Manager</h4>
-        <span class="meta">2020 – Present</span>
+        <article class="entry job">
+          <div class="column-narrow">
+            <h4 class="entry-title">Food Service Manager</h4>
+            <span class="meta">2020 – Present</span>
+          </div>
+          <div class="column-wide">
+            <p>Skilled in team management and handling consumer interactions.</p>
+            <ul>
+              <li>Trained and supervised a team of 5+ employees.</li>
+              <li>Leader of shift operations and customer service initiatives.</li>
+              <li>Developed communication and conflict-resolution skills.</li>
+            </ul>
+          </div>
+        </article>
       </div>
-      <div class="column-wide">
-        <p>Skilled in team management and handling consumer interactions.</p>
-        <ul>
-          <li>Trained and supervised a team of 5+ employees.</li>
-          <li>Leader of shift operations and customer service initiatives.</li>
-          <li>Developed communication and conflict-resolution skills.</li>
-        </ul>
-      </div>
-    </article>
+    </section>
 
-  </div>
-</section>
+    <!-- Projects (now has background image + gradient) -->
+    <section id="projects" class="section alt bg-image">
+      <div class="content-wrap">
+        <h3 class="section-title">Projects</h3>
 
+        <!-- DigiDachi -->
+        <article class="entry">
+          <div class="column-narrow">
+            <h4 class="entry-title">DigiDachi ⇒ Python</h4>
+            <span class="meta">2025 – Present</span>
+            <div class="project-media">
+              <img src="images/Digidachi.png" alt="Screenshot of DigiDachi" class="project-image" />
+            </div>
+          </div>
+          <div class="column-wide">
+            <p>WIP SR Design project inspired by Tamagotchi — a blend of social, virtual pet, and self-care wellness app.</p>
+            <ul>
+              <li>Digital pet evolves based on user activity; encourages positive habits.</li>
+              <li>Gamified: daily challenges, XP, mini-games, leaderboards.</li>
+            </ul>
+            <div class="links">
+              <a class="chip" href="https://github.com/Krispykelp/DigiDachi" target="_blank" rel="noopener">View on GitHub</a>
+            </div>
+          </div>
+        </article>
 
-    <!-- Projects -->
-    <section id="projects" class="section alt">
-    <div class="content-wrap">
-    <h3 class="section-title">Projects</h3>
+        <!-- Unity RTS -->
+        <article class="entry">
+          <div class="column-narrow">
+            <h4 class="entry-title">RTS Project (Unity · C#)</h4>
+            <span class="meta">2025 – Present</span>
+          </div>
+          <div class="column-wide">
+            <p>Real-time strategy game in <strong>Unity</strong> about ant colonies competing for resources and territory.</p>
+            <ul>
+              <li>Resource management, unit control, base building.</li>
+              <li>Tech tree unlocks ant evolutions and abilities.</li>
+              <li>AI pathfinding and dynamic camera.</li>
+            </ul>
+            <div class="links">
+              <a class="chip" href="https://github.com/Krispykelp/AntRTS" target="_blank" rel="noopener">View on GitHub (Unity)</a>
+            </div>
+          </div>
+        </article>
 
-    <!-- DigiDachi -->
-    <article class="entry">
-      <div class="column-narrow">
-        <h4 class="entry-title">DigiDachi ⇒ Python</h4>
-        <span class="meta">2025 – Present</span>
-        <div class="project-media">
-          <img src="images/Digidachi.png" alt="Screenshot of DigiDachi" class="project-image" />
-        </div>
+        <!-- Budget App -->
+        <article class="entry">
+          <div class="column-narrow">
+            <h4 class="entry-title">Green Needle Budgeting App ⇒ Java</h4>
+            <span class="meta">2024</span>
+          </div>
+          <div class="column-wide">
+            <p>Budgeting app that visualizes income/spend trends (Chart.js) with CRUD for transactions and responsive UI.</p>
+            <div class="links">
+              <a class="chip" href="https://github.com/BrianFigueroa914/NewBudgetApp" target="_blank" rel="noopener">View on GitHub</a>
+            </div>
+          </div>
+        </article>
       </div>
-      <div class="column-wide">
-        <p>WIP SR Design project inspired by Tamagotchi — a blend of social, virtual pet, and self-care wellness app.</p>
-        <ul>
-          <li>Digital pet evolves based on user activity; encourages positive habits.</li>
-          <li>Gamified: daily challenges, XP, mini-games, leaderboards.</li>
-        </ul>
-        <div class="links">
-          <a class="chip" href="https://github.com/Krispykelp/DigiDachi" target="_blank" rel="noopener">View on GitHub</a>
-        </div>
-      </div>
-    </article>
-
-    <!-- Unity RTS -->
-    <article class="entry">
-      <div class="column-narrow">
-        <h4 class="entry-title">RTS Project (Unity · C#)</h4>
-        <span class="meta">2025 – Present</span>
-      </div>
-      <div class="column-wide">
-        <p>Real-time strategy game in <strong>Unity</strong> about ant colonies competing for resources and territory.</p>
-        <ul>
-          <li>Resource management, unit control, base building.</li>
-          <li>Tech tree unlocks ant evolutions and abilities.</li>
-          <li>AI pathfinding and dynamic camera.</li>
-        </ul>
-        <div class="links">
-          <a class="chip" href="https://github.com/Krispykelp/AntRTS" target="_blank" rel="noopener">View on GitHub (Unity)</a>
-        </div>
-      </div>
-    </article>
-
-    <!-- Budget App -->
-    <article class="entry">
-      <div class="column-narrow">
-        <h4 class="entry-title">Green Needle Budgeting App ⇒ Java</h4>
-        <span class="meta">2024</span>
-      </div>
-      <div class="column-wide">
-        <p>Budgeting app that visualizes income/spend trends (Chart.js) with CRUD for transactions and responsive UI.</p>
-        <div class="links">
-          <a class="chip" href="https://github.com/BrianFigueroa914/NewBudgetApp" target="_blank" rel="noopener">View on GitHub</a>
-        </div>
-      </div>
-    </article>
-
-  </div>
-</section>
+    </section>
 
     <!-- Education -->
     <section id="education" class="section alt">
@@ -155,25 +169,37 @@
       </div>
     </section>
 
-<!-- Contact -->
-<section id="contact" class="section">
-  <div class="content-wrap">
-    <h3 class="section-title">Let's Keep in Touch</h3>
-    <div class="contact-grid">
-      <a class="link" href="mailto:kristoffer.sy123@gmail.com">Email</a>
-      <a class="link" href="#" target="_blank" rel="noopener">Future Website</a>
-      <a class="link" href="#" target="_blank" rel="noopener">Future LinkedIn</a>
-      <a class="link" href="https://github.com/Krispykelp" target="_blank" rel="noopener">GitHub</a>
-    </div>
-  </div>
-</section>
-
+    <!-- Contact -->
+    <section id="contact" class="section">
+      <div class="content-wrap">
+        <h3 class="section-title">Let's Keep in Touch</h3>
+        <div class="contact-grid">
+          <a class="link" href="mailto:kristoffer.sy123@gmail.com">
+            <i class="fa-solid fa-envelope"></i> Email
+          </a>
+          <a class="link" href="#" target="_blank" rel="noopener">
+            <i class="fa-solid fa-globe"></i> Future Website
+          </a>
+          <a class="link" href="#" target="_blank" rel="noopener">
+            <i class="fa-brands fa-linkedin"></i> Future LinkedIn
+          </a>
+          <a class="link" href="https://github.com/Krispykelp" target="_blank" rel="noopener">
+            <i class="fa-brands fa-github"></i> GitHub
+          </a>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <!-- Footer -->
+  <!-- Footer (with icons) -->
   <footer class="site-footer">
     <div class="content-wrap">
       <small>© <span id="year"></span> Kristoffer Sy · CSUN Alumni 2026.</small>
+      <div class="footer-icons">
+        <a href="mailto:kristoffer.sy123@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+        <a href="https://github.com/Krispykelp" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="#" target="_blank" rel="noopener" aria-label="Website"><i class="fa-solid fa-globe"></i></a>
+      </div>
     </div>
   </footer>
 
