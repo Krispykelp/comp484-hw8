@@ -211,17 +211,6 @@ header h1, header h2 { margin: 0; }
   margin-bottom: 0.75rem;
 }
 
-/* ===== Background Image + RGBA Gradient on Projects ===== */
-.bg-image {
-  /* layer 1: semi-transparent gradient, layer 2: background image */
-  background-image:
-    linear-gradient(180deg, rgba(15,23,42,0.85), rgba(15,23,42,0.35)),
-    url("images/Kyoto.jpg");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed; /* subtle parallax */
-}
-
 /* Skills Grid */
 .skills {
   display: grid;
@@ -237,7 +226,7 @@ header h1, header h2 { margin: 0; }
   padding: .6rem .9rem;
 }
 
-/* Contact Section — 4 Equal Boxes */
+/* Contact Section */
 .contact-grid {
   display: flex;
   justify-content: center;
@@ -268,6 +257,22 @@ header h1, header h2 { margin: 0; }
   box-shadow: var(--shadow);
 }
 
+/* Contact Background */
+#contact {
+  background-image:
+    linear-gradient(
+      rgba(15, 23, 42, 0.85),
+      rgba(15, 23, 42, 0.85)
+    ),
+    url("images/Me.jpg"); 
+  background-size: cover;
+  background-position: center; 
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* optional parallax-like effect */
+  color: var(--text);
+}
+
+
 /* Footer */
 .site-footer {
   padding: 2rem 0 3rem;
@@ -277,12 +282,12 @@ header h1, header h2 { margin: 0; }
 .footer-icons {
   margin-top: .5rem;
   display: inline-flex;
-  gap: .75rem;
+  gap: .3rem;
 }
 .footer-icons a {
   color: var(--text-dim);
   text-decoration: none;
-  padding: .3rem .45rem;
+  padding: .2rem .45rem;
   border-radius: .5rem;
   transition: background .2s ease, color .2s ease;
 }
