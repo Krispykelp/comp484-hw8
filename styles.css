@@ -311,3 +311,84 @@ header h1, header h2 { margin: 0; }
 @media (max-width: 500px) {
   .link { flex: 1 1 100%; }
 }
+
+/* =========================
+   PRINT / PDF
+   ========================= */
+
+/* hidden on screen, visible in print */
+.print-header { display: none; }
+
+@media print {
+
+  /* Kill fixed nav entirely */
+  .top-nav {
+    display: none !important;
+  }
+
+  body {
+    padding-top: 0 !important;
+  }
+
+  /* Force clean white print */
+  :root {
+    --bg: #ffffff;
+    --surface: #ffffff;
+    --muted: #ffffff;
+    --text: #111111;
+    --text-dim: #333333;
+  }
+
+  html, body {
+    background: #fff !important;
+    color: #111 !important;
+  }
+
+  /* ❗ CRITICAL: disable floats in print */
+  .column-narrow,
+  .column-wide {
+    float: none !important;
+    width: 100% !important;
+  }
+
+  /* Allow sections to split */
+  section,
+  #projects {
+    break-inside: auto !important;
+    page-break-inside: auto !important;
+  }
+
+  /* Protect only small blocks */
+  .entry,
+  li {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  /* Remove heavy visuals */
+  #contact {
+    background: none !important;
+    color: #111 !important;
+  }
+
+  .profile-img {
+    box-shadow: none !important;
+  }
+
+  .entry {
+    border-bottom: 1px solid #ddd !important;
+  }
+
+  /* Prevent giant gaps before headings */
+  h2,
+  .section-title {
+    margin-top: .4em !important;
+  }
+
+  @page {
+    margin: 0.6in;
+  }
+  
+}
+
+
